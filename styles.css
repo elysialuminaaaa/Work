@@ -139,34 +139,54 @@ nav ul li a:hover {
    Dropdown
 ====================== */
 
+/* Dropdown */
+
+.dropdown {
+  position: relative;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 35px;
-  right: 0;
-  width: 230px;
+  top: 100%; /* ชิดกับเมนู */
+  left: 50%;
+  transform: translateX(-50%);
+
+  min-width: 220px;
   background: white;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  z-index: 999;
+}
+
+/* สร้างพื้นที่กัน hover หลุด */
+.dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 15px;
+  top: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .dropdown-content a {
   display: block;
-  padding: 14px;
+  padding: 14px 18px;
   text-decoration: none;
-  color: var(--dark);
+  color: #333;
   transition: 0.3s;
 }
 
 .dropdown-content a:hover {
   background: #edf7f1;
-  color: var(--primary);
-  padding-left: 22px;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
+  color: #2d6a4f;
+  padding-left: 25px;
 }
 
 /* ======================
@@ -176,7 +196,7 @@ nav ul li a:hover {
 .banner {
   height: 420px;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("../images/banner.jpg");
+    url("4569.png");
 
   background-size: cover;
   background-position: center;
@@ -302,6 +322,26 @@ footer {
 
 footer h2 {
   margin-bottom: 10px;
+}
+.reference {
+  margin-top: 25px;
+}
+
+.reference h3 {
+  margin-bottom: 15px;
+}
+
+.reference img {
+  width: 150px;
+  height: 150px;
+  background: white;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.reference p {
+  margin-top: 10px;
+  font-size: 0.9rem;
 }
 
 /* ======================
